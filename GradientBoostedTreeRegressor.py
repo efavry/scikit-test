@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.metrics import classification_report
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingRegressor
 from sklearn import svm
 from sklearn import preprocessing
 
@@ -173,16 +173,26 @@ Y_train = np.array(train_set)
 
 #print(Y_train[:, 0])
 
-clf_0 = BaggingRegressor(DecisionTreeRegressor())
+
+#in comments here are the values I have tested
+n_estimators =100
+max_depth=4
+min_samples_split=2
+learning_rate=0.01
+loss='ls' #least square loss
+
+
+
+clf_0 = GradientBoostingRegressor(loss=loss,learning_rate=learning_rate,min_samples_split=min_samples_split,max_depth=max_depth,n_estimators=n_estimators)
 clf_0.fit(X_train, Y_train[:, 0])
 
-clf_1 = BaggingRegressor(DecisionTreeRegressor())
+clf_1 = GradientBoostingRegressor(loss=loss,learning_rate=learning_rate,min_samples_split=min_samples_split,max_depth=max_depth,n_estimators=n_estimators)
 clf_1.fit(X_train, Y_train[:, 1])
 
-clf_2 = BaggingRegressor(DecisionTreeRegressor())
+clf_2 = GradientBoostingRegressor(loss=loss,learning_rate=learning_rate,min_samples_split=min_samples_split,max_depth=max_depth,n_estimators=n_estimators)
 clf_2.fit(X_train, Y_train[:, 2])
 
-clf_3 = BaggingRegressor(DecisionTreeRegressor())
+clf_3 = GradientBoostingRegressor(loss=loss,learning_rate=learning_rate,min_samples_split=min_samples_split,max_depth=max_depth,n_estimators=n_estimators)
 clf_3.fit(X_train, Y_train[:, 3])
 
 
