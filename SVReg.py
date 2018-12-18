@@ -173,18 +173,19 @@ Y_train = np.array(train_set)
 #in comments here are the values I have tested
 kernel='sigmoid' #linear, poly, rbf, sigmoid
 gamma='scale' #auto scale
-epsilon=1#0.1,0.5,0.7,1
+epsilon=0.1#0.1,0.5,0.7,1
+C_param=1
 
-clf_0 = svm.SVR(kernel=kernel, gamma=gamma, epsilon=epsilon)
+clf_0 = svm.SVR(kernel=kernel, gamma=gamma, epsilon=epsilon, C=C_param)
 clf_0.fit(X_train, Y_train[:, 0])
 
-clf_1 = svm.SVR(kernel=kernel, gamma=gamma, epsilon=epsilon)
+clf_1 = svm.SVR(kernel=kernel, gamma=gamma, epsilon=epsilon, C=C_param)
 clf_1.fit(X_train, Y_train[:, 1])
 
-clf_2 = svm.SVR(kernel=kernel, gamma=gamma, epsilon=epsilon)
+clf_2 = svm.SVR(kernel=kernel, gamma=gamma, epsilon=epsilon, C=C_param)
 clf_2.fit(X_train, Y_train[:, 2])
 
-clf_3 = svm.SVR(kernel=kernel, gamma=gamma, epsilon=epsilon)
+clf_3 = svm.SVR(kernel=kernel, gamma=gamma, epsilon=epsilon, C=C_param)
 clf_3.fit(X_train, Y_train[:, 3])
 
 
