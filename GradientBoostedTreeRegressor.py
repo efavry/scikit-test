@@ -175,7 +175,7 @@ Y_train = np.array(train_set)
 
 
 #in comments here are the values I have tested
-n_estimators =500 #decrease the value to get worse results ? 500 is giving good result already
+n_estimators =500 #decrease the value to get worse results ? 500 is giving good result already, 1000 should overfit
 max_depth=4
 min_samples_split=2
 learning_rate=0.01
